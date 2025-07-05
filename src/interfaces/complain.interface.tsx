@@ -1,0 +1,20 @@
+
+export interface  ComplainInterface{
+    id: number,
+    fullName: string|null,
+    city:string|null,
+    subCity: string|null,
+    woreda: string|null,
+    homeNo: string|null,
+    phoneNumber:string|null,
+    reason:string|null,
+    complimentDate: string|null,
+    placeSubCity: string|null,
+    placeWoreda: string|null,
+    employerName:string|null,
+    expectedResponse:string|null,
+    responded:boolean,
+    year:string|null,
+    created_date:string|null,
+    updated_date: string|null,
+}

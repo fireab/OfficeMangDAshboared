@@ -1,0 +1,12 @@
+
+.ad-label {
+font-size: 16px;
+font-weight: w100;
+}
+
+.ad_input {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

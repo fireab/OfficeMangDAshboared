@@ -1,0 +1,80 @@
+/* styles.css */
+.side-bar {
+    overflow: hidden; /* Hide scrollbar by default */
+    width: 79%;
+    position: relative; /* Ensure the hover effect works correctly */
+    border: 1px solid;
+    border-color: #1976d2;
+}
+
+.side-bar:hover {
+    overflow: auto; /* Show scrollbar on hover */
+}
+
+.side-bar::-webkit-scrollbar {
+    width: 4px; /* Set the width of the scrollbar */
+    height: 8px; /* Set the height of the horizontal scrollbar */
+}
+
+.side-bar::-webkit-scrollbar-thumb {
+    background-color: white; /* Customize scrollbar thumb color */
+    border-radius: 10px; /* Round the corners */
+}
+
+.side-bar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Customize scrollbar track color */
+}
+
+/* For Firefox */
+.side-bar {
+    scrollbar-width: none; /* Hide scrollbar by default */
+}
+
+.side-bar:hover {
+    scrollbar-width:thin; /*2px Make scrollbar thin on hover */
+    scrollbar-color: rgba(106, 104, 104, 0.5) rgba(164, 160, 160, 0.1); /* Thumb and track color on hover */
+}
+.side-bar-content{
+    margin-top: 5px;
+    /* height:30px; */
+
+}
+.side-bar-content:hover{
+
+
+}
+.side-bar-content-active{
+    background-color:whitesmoke;
+    color:black;
+    border:4px white solid;
+    border-radius:100px
+}
+.side-bar-link{
+    text-decoration: none;
+    color: inherit; 
+    outline: none;
+}
+.side-bar-link:hover{
+    color: rgb(147, 147, 241);
+}
+.side-bar-active-link{
+    text-decoration: none;
+    outline: none;
+}
+
+.side-bar-icons{
+    min-width: 40px
+}
+
+.vertical-line {
+    width: 2px;
+    color: blue;
+    background-color: #1976d2; /* Replace with your desired color */
+    left:18%;
+    border-radius: 2px;
+    
+  }
+.side-bar-a{
+    text-decoration: none;
+    color:white
+}

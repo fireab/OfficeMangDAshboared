@@ -1,0 +1,131 @@
+.boder-radius-40{
+    border-radius: 50px;
+}
+.home-total-stats{
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    color: white;
+    margin-right: 10%;
+}
+.home-total-students{
+    color: black;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+.home-total-employees{
+    background-color: rgb(115, 115, 228);
+}
+.home-total-profit{
+    background-color: rgb(115, 115, 228);
+}
+.home-total-revenue{
+    background-color: rgb(237, 142, 142);
+}
+.unstyled-link {
+    color: black;       /* Use the same color as the surrounding text */
+    text-decoration: none; 
+    /* pointer-events: none; Disable clicking on the link */
+}
+unstyled-link:hover{
+    color:blue
+}
+/* .profile-input{
+    width:300px;
+    height:40px;
+    padding-left: 6px;
+    border: none; 
+    size: 15px;
+    border-radius: 10px;
+} */
+
+.profile-input {
+    width: 300px;
+    height: 40px;
+    padding-left: 6px;
+    border: none;
+    font-size: 18px;     /* ✅ Correct way to make text larger */
+    font-weight: bold;   /* ✅ Makes text bold */
+    border-radius: 10px;
+}
+
+
+.change-profile {
+    padding: 10px;
+    align-items: center;
+    gap: 15px;
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: column;
+    border-right: 1px rgb(88, 83, 83) solid;
+    margin-right: 5px;
+  }
+  
+@media (max-width: 599px) { /* Assuming "xs" breakpoint */
+.change-profile {
+    width: 100%;
+}
+}
+
+@media (min-width: 600px) { /* Assuming "sm" breakpoint starts at 600px */
+.change-profile {
+    width: 48%;
+}
+}
+.form-profile {
+padding: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-flow: wrap;
+gap: 10px;
+flex-direction: column;
+}
+@media (max-width: 599px) { /* Assuming "xs" breakpoint */
+.form-profile {
+    width: 100%;
+}
+}
+
+@media (min-width: 600px) { /* Assuming "sm" breakpoint starts at 600px */
+.form-profile {
+    width: 48%;
+}
+}
+.profile {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: rgb(245, 245, 249);
+    padding: 30px;
+    align-items: center;
+    border: 1px solid rgb(201, 197, 197);
+    border-radius: 50px;
+    z-index: 3;
+}
+
+@media (max-width: 599px) { /* Assuming "xs" breakpoint */
+.profile {
+    width: 100%;
+}
+}
+
+@media (min-width: 600px) { /* Assuming "sm" breakpoint starts at 600px */
+.profile {
+    width: 100%;
+}
+}
+  
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    padding-top: 8px;
+    gap: 5px;
+    flex-flow: wrap;
+    border-radius: 50px;
+    margin-top: 10px;
+    border: 0.1px solid lightblue;
+    width: 100%;
+  }
