@@ -85,6 +85,7 @@ export function EmployeeDetailPage() {
   const [amharic_name, setAmharicname] = useState<string>();
   const [office, setOffice] = useState<string>();
   const [position, setPosition] = useState<string>();
+
   const handleEditEmployee = () => {
     makePutRequest(`/employee/${id}`, {
       oromic_name: amharic_name,
@@ -119,6 +120,7 @@ export function EmployeeDetailPage() {
 
         setImagePath(imageUrl);
         console.log("Image Path ", image_path);
+        setProfileImage(""); // Clear profileImage when loading a new employee
       })
       .catch((error) => {
         console.log("Error", error);
@@ -170,7 +172,9 @@ export function EmployeeDetailPage() {
               >
                 <img
                   src={
-                    employee?.path
+                    profileImage
+                      ? (profileImage as string)
+                      : employee?.path
                       ? BaseApi.base_url + "/public/" + employee?.path
                       : "/icons/profile_holder.jpg"
                   }
@@ -186,7 +190,7 @@ export function EmployeeDetailPage() {
                                 src={`${employee?.path}`}
                               alt="Avatar"  /> */}
               </div>
-              {/* <Button
+              <Button
                 component="label"
                 variant="contained"
                 startIcon={<Collections />}
@@ -200,7 +204,7 @@ export function EmployeeDetailPage() {
               >
                 <VisuallyHiddenInput type="file" onChange={handleImageChange} />
                 Change Image
-              </Button> */}
+              </Button>
             </Box>
             <Box className="form-profile">
               <Stack
@@ -261,7 +265,7 @@ export function EmployeeDetailPage() {
                 ></input>
               </Stack>
 
-              {/* <Button
+              <Button
                 startIcon={<UpdateOutlined />}
                 onClick={handleEditEmployee}
                 variant="contained"
@@ -272,7 +276,7 @@ export function EmployeeDetailPage() {
                 }}
               >
                 {t("submit")}
-              </Button> */}
+              </Button>
             </Box>
           </div>
         </Box>
