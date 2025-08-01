@@ -83,17 +83,22 @@ export function EmployeeDetailPage() {
     }
   };
   const [amharic_name, setAmharicname] = useState<string>();
+  const [oromic_name, setOromicname] = useState<string>();
+  const [english_name, setEnglishname] = useState<string>();
+
   const [office, setOffice] = useState<string>();
   const [position, setPosition] = useState<string>();
 
   const handleEditEmployee = () => {
     makePutRequest(`/employee/${id}`, {
-      oromic_name: amharic_name,
+      amharic_name: amharic_name,
+      oromic_name: oromic_name,
+      english_name: english_name,
       office: office,
       position: position,
     })
       .then((data) => {
-        console.log(data);
+        console.log("the update response ma nigga", data);
 
         window.alert(" Update successful !");
       })
@@ -216,11 +221,30 @@ export function EmployeeDetailPage() {
                 <b>{t("full_name")} : </b>
                 <input
                   name="Name"
-                  disabled
+                  // disabled
+                  onChange={(e) => {
+                    setEnglishname(e.target.value);
+                  }}
+                  defaultValue={employee?.english_name}
+                  id="Name"
+                  className="profile-input"
+                  placeholder={employee?.english_name}
+                ></input>
+              </Stack>
+              <Stack
+                direction="row"
+                gap={2}
+                justifyContent={"center"}
+                alignItems={"center"}
+              >
+                <b> ሙሉ ስም : </b>
+                <input
+                  name="Name"
+                  // disabled
                   onChange={(e) => {
                     setAmharicname(e.target.value);
                   }}
-                  defaultValue={employee?.english_name}
+                  defaultValue={employee?.amharic_name}
                   id="Name"
                   className="profile-input"
                   placeholder={employee?.amharic_name}
@@ -232,10 +256,29 @@ export function EmployeeDetailPage() {
                 justifyContent={"center"}
                 alignItems={"center"}
               >
+                <b>Maqaa Guutuu: </b>
+                <input
+                  name="Name"
+                  // disabled
+                  onChange={(e) => {
+                    setOromicname(e.target.value);
+                  }}
+                  defaultValue={employee?.oromic_name}
+                  id="Name"
+                  className="profile-input"
+                  placeholder={employee?.oromic_name}
+                ></input>
+              </Stack>
+              <Stack
+                direction="row"
+                gap={2}
+                justifyContent={"center"}
+                alignItems={"center"}
+              >
                 <b>{t("office")} : </b>
                 <input
                   name="Office"
-                  disabled
+                  // disabled
                   onChange={(e) => {
                     setOffice(e.target.value);
                   }}
@@ -264,7 +307,6 @@ export function EmployeeDetailPage() {
                   placeholder={employee?.position}
                 ></input>
               </Stack>
-
               <Button
                 startIcon={<UpdateOutlined />}
                 onClick={handleEditEmployee}
